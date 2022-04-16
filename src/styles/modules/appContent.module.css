@@ -1,0 +1,12 @@
+.content__wrapper{
+    background-color: var(--bg-2);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.emptyImage{
+    width: 100%;
+    max-width: 750px;
+    height: 400px;
+    object-fit: cover;
+}
