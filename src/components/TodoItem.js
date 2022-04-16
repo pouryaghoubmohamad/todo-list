@@ -136,7 +136,7 @@ const TodoItem = ({todo}) => {
             </div>
             {
                 updateModalOpen &&
-                <ModalTodo  modalOpen={updateModalOpen} setModalOpen={setUpdateModalOpen} todo={todo} />
+                <ModalTodo  modalOpen={updateModalOpen} setModalOpen={setUpdateModalOpen} todo={todo} type="update" />
             }
 
         </motion.div>

@@ -18,7 +18,7 @@ import toast from "react-hot-toast";
 
 
 // react-redux
-import { useDispatch , useSelector } from "react-redux";
+import { useDispatch  } from "react-redux";
 
 // action
 import { addTodo , updateTodo } from "../redux/todo/todoAction";
@@ -26,15 +26,15 @@ import { addTodo , updateTodo } from "../redux/todo/todoAction";
 
 
 // framer-motion
-import { addScaleCorrector, AnimatePresence, motion, useMotionValue, useTransform } from "framer-motion";
+import {  AnimatePresence, motion } from "framer-motion";
 
 const dropI = {
     hidden : {
         opacity : 0 ,
-        transform : addScaleCorrector(.9) ,
+        transform :" scale(.9)" ,
     },
     visible : {
-        transform : addScaleCorrector(1) ,
+        transform : "scale(1)" ,
         opacity: 1 ,
         transition : {
             duration : .1 ,
@@ -45,7 +45,7 @@ const dropI = {
     },
 
     exit : {
-        transform  : addScaleCorrector(.9) ,
+        transform  : "scale(.9)" ,
         opacity : 0 ,
     }
 
@@ -66,9 +66,9 @@ const ModalTodo = ({ type , modalOpen , setModalOpen , todo }) => {
     useEffect(() => {
         if(type === "update"){
             setTitle(todo.title);
-            setStatus(todo.status)
+            setStatus(todo.status);
         }
-    } , [modalOpen , todo , type]);
+    } , [modalOpen , todo  , type]);
 
 
     const handleSubmit = (e) => {
@@ -94,12 +94,12 @@ const ModalTodo = ({ type , modalOpen , setModalOpen , todo }) => {
                     title ,
                     status ,
                 }));
-                setModalOpen(false);
                 toast.success("Update successfully");
             }else{
                 toast.error("No changes made");
             }
         }
+        setModalOpen(false);
     }
 
 
@@ -127,6 +127,7 @@ const ModalTodo = ({ type , modalOpen , setModalOpen , todo }) => {
                     >
                         <MdOutlineClose />
                     </motion.div>
+                    
                     <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
                         <h1 className={styles.formTitle}>
                             {
@@ -148,7 +149,7 @@ const ModalTodo = ({ type , modalOpen , setModalOpen , todo }) => {
                         <label>
                             status
                             <select name="status" value={status} onChange={(e) => setStatus(e.target.value)}>
-                                <option value="inComplete">incomplete</option>
+                                <option value="incomplete">incomplete</option>
                                 <option value="complete">complete</option>
                             </select>
                         </label>

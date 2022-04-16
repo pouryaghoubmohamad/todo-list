@@ -40,7 +40,7 @@ const todoReducer = (state = initialState , action) => {
             case "UPDATE_FILTER_STATUS" : 
                 return{
                     ...state ,
-                    filterStatus : action.payload.status  ,
+                    filterStatus : action.payload  ,
                 }
             
         default : 
